@@ -1,0 +1,57 @@
+Data Types
+in reality there are A lot of different mysql data Types
+
+1.NUMERIC..
+---------
+INT 
+SMALLINT
+TINYINT
+MEDIUMINT
+BIGINT
+DECIMAL
+NUMERIC
+FLOAT
+DOUBLE
+BIT 
+
+
+2.STRING..
+--------
+CHAR 
+VARCHAR
+BINARY
+VARBINARY
+BLOB
+TINYBLOB
+MEDIUMBLOB
+LONGBLOB
+TEXT
+TINYTEXT
+MEDIUMTEXT
+LONGTEXT
+ENUM
+
+
+3.DATE..
+--------
+DATA
+DATETIME
+TIMESTAMP
+TIME
+YEAR
+
+----------------------------------
+Int...
+A normal sized integer that can be signed or unsigned
+range is from 0 to 4294967295
+example 0, 1, -77, 55555
+
+Varchar...
+A variable length string between 1 and 255 characters in length. 
+syntax: VARCHAR(25). you must define a length.
+example malik, 555, -4
+
+Date...
+A date in YYYY-MM-DD format, between 1000-01-01 and 9999-12-31.
+example july 15th, 1995 would be store as 1994-07-15
+

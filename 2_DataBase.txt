@@ -1,0 +1,13 @@
+//CREATE DATABASE
+create database mydb;
+//////////////////////////////////////
+//DROP DATABASE
+drop database mydb;
+//////////////////////////////////////
+//SELECT DATABASE TO WORK
+use mydb
+-------------------------
+output: MariaDB [mydb]>
+-------------------------
+
+

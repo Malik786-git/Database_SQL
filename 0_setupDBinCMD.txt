@@ -1,0 +1,15 @@
+Run xampp server and start apache and phpmyadmin then.
+Go cmd and write command below...
+
+
+C:\Users\Ali Waris>cd../..
+
+C:\>cd xampp/mysql/bin
+
+C:\xampp\mysql\bin>mysql -u root -p -h localhost
+Enter password
+Welcome to the MariaDB monitor.
+------------------------------------------------
+CONFIGURE DATABASE IN CMD
+-----------------------------------------------
+show databases; // to check how many db already created

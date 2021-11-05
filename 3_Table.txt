@@ -1,0 +1,41 @@
+
+//////////////////////////////////////
+In table horizontal information is records
+and vertical inforamation is fields
+//////////////////////////////////////
+
+
+1.create table..
+->create table students(name varchar(55), age int);
+
+-------------------------------
+2.to check tables in working db..
+->show tables;
+
+ouput:
++----------------+
+| Tables_in_mydb |
++----------------+
+| students       |
++----------------+
+1 row in set (0.001 sec)
+
+
+
+----------------------------------
+3. to show table row and column
+->desc students;
+
+output:
++-------+-------------+------+-----+---------+-------+
+| Field | Type        | Null | Key | Default | Extra |
++-------+-------------+------+-----+---------+-------+
+| name  | varchar(25) | YES  |     | NULL    |       |
+| age   | int(11)     | YES  |     | NULL    |       |
++-------+-------------+------+-----+---------+-------+
+2 rows in set (0.157 sec)
+
+
+-------------------------------------------------------
+4. delete table
+->drop table students;
