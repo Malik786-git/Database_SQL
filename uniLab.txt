@@ -1,0 +1,29 @@
+create table employees(id int, name varchar(25), age int, address varchar(25), salary float); 
+
+insert into employees values(1, "Ramesh", 32, "Ahmedabad", 2000),(2, "khilan", 25, "Dehli", 1500) ,(3, "kaushik", 23, "Kota", 2000) ,(4, "Chaitali", 25, "Mumbai", 6500),(5, "Hardik", 27, "Bhopal", 8500),(6, "Komal", 22, "MP", 4500),(7, "Muffy", 24, "Indore", 10000);
+
+Q1
+select * from employees where salary > 2000 AND age <25; 
+
+Q2
+select * from employees where salary > 2000 OR age <25; 
+
+
+Q3
+select * from employees where name like 'ko%'; 
+
+Q4
+select * from employees where salary IN (2000, 6500); 
+
+Q5
+ select * from employees where salary BETWEEN 2000 AND 6500;
+
+
+
+
+
+
+
+
+
+
