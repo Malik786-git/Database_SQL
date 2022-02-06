@@ -1,0 +1,44 @@
+/////////////////////////////
+insertion....
+/////////////////////////////
+
+*>insert into students (id, name, age) 
+               values(1, "malik", 18),
+                     (2, "ashar", 17),
+                     (3, "owais", 19);
+
+or
+
+*>insert into students values(1, "malik", 18),
+                           (2, "ashar", 17),
+                           (3, "owais", 19);
+
+
+ to check show table with values..
+ *> select * from students;                          
+
+/////////////////////////////
+How to check warning in sql...
+/////////////////////////////
+
+in this query the format of value is wrong, but the sql but the values in talbe, but the show warning...
+
+*>insert into students values("abds", "malik", 18);
+
+sql ouput..
+Query OK, 1 row affected, 1 warning (0.08sec)
+
+to check this warning we run query
+
+*>show warnings;
+
+
+---------------------------------
+
+
+
+
+
+
+
+

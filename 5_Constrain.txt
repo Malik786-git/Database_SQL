@@ -1,0 +1,90 @@
+Null mean value is not known.. (Null mean not a zero);
+
+
+we have a talbe....
++------+-------+------+
+| id   | name  | age  |
++------+-------+------+
+|    1 | malik |   18 |
+|    2 | ashar |   17 |
+|    3 | owais |   19 |
++------+-------+------+
+
+
+
+we insert the value....
+
+*>insert into students (id, name) values(4, "umer");
+
++------+-------+------+
+| id   | name  | age  |
++------+-------+------+
+|    1 | malik |   18 |
+|    2 | ashar |   17 |
+|    3 | owais |   19 |
+|    4 | umer  | NULL |
++------+-------+------+
+
+Note:
+by Default the value of age is assigne Null of (id 4)
+so it is not allowed in real world because age is not a Null...
+so we create table to change Default value..
+
+new talbe...
+ *>create table std2(id int NOT NULL, name varchar(25), age int NOT NULL);
+
+ output...
++-------+-------------+------+-----+---------+-------+
+| Field | Type        | Null | Key | Default | Extra |
++-------+-------------+------+-----+---------+-------+
+| id    | int(11)     | NO   |     | NULL    |       |
+| name  | varchar(25) | YES  |     | NULL    |       |
+| age   | int(11)     | NO   |     | NULL    |       |
++-------+-------------+------+-----+---------+-------+
+3 rows in set (0.011 sec)
+
+///////////////////////////////////////////////////////
+insert only name not id and age, so it automatically give 0, not NULL..
+*> insert into std2 (name) values("malik");
+
+output query:
+*> select * from std2;
+output:
++----+-------+-----+
+| id | name  | age |
++----+-------+-----+
+|  0 | malik |   0 |
++----+-------+-----+
+
+///////////////////////////////////
+set Default value..........
+
+*>create table std3(id int NOT NULL default 0,
+  name varchar(25) NOT NULL default "unnamed", 
+  age int NOT NULL default 15);
+
++-------+-------------+------+-----+---------+-------+
+| Field | Type        | Null | Key | Default | Extra |
++-------+-------------+------+-----+---------+-------+
+| id    | int(11)     | NO   |     | 0       |       |
+| name  | varchar(25) | NO   |     | unnamed |       |
+| age   | int(11)     | NO   |     | 15      |       |
++-------+-------------+------+-----+---------+-------+
+3 rows in set (0.032 sec)
+
+
+Now insert in talbe.....
+// nothing to input...
+insert into std3 () values();  
+
+*>select * from std3;
+
++----+---------+-----+
+| id | name    | age |
++----+---------+-----+
+|  0 | unnamed |  15 |
++----+---------+-----+
+
+
+
+/////////////////////////////////////
