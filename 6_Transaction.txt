@@ -1,0 +1,100 @@
+
+
+Suppose we have an table...
+
+
+
+create talbe/////////////////////////////////////////////////////////////////////////////
+
+MariaDB [test]> create table product(id int, Name varchar(25), Price int, Quantity int);
+Query OK, 0 rows affected (0.462 sec)
+
+insert values in table product;///////////////////////////////////////////////////////////
+
+MariaDB [test]> insert into product values(1, "laptop", 2340, 100),(2, "Desktop", 3467, 20);
+
+
+MariaDB [test]> select * from product;
+output....
++------+---------+-------+----------+
+| id   | Name    | Price | Quantity |
++------+---------+-------+----------+
+|    1 | laptop  |  2340 |      100 |
+|    2 | Desktop |  3467 |       20 |
++------+---------+-------+----------+
+--------------------------------------------------------------------------------------------
+
+//Update the Quantity of ID one....(this is general update in table)
+
+MariaDB [test]> update product set Quantity =200 where id=1;
+
+MariaDB [test]> select * from product;
++------+---------+-------+----------+
+| id   | Name    | Price | Quantity |
++------+---------+-------+----------+
+|    1 | laptop  |  2340 |      200 |
+|    2 | Desktop |  3467 |       20 |
++------+---------+-------+----------+
+
+----------------------------------------------------------------------------------------------
+(This Transaction sytax is for sql server not MariaDB)
+Update through transaction without commit....
+///////////////////////////////
+
+
+
+
+*>Begin Transaction...
+*>update product set Quantity =300 where id=1;
+
+
+
+*> select * from product;
++------+---------+-------+----------+
+| id   | Name    | Price | Quantity |
++------+---------+-------+----------+
+|    1 | laptop  |  2340 |      300 |
+|    2 | Desktop |  3467 |       20 |
++------+---------+-------+----------+
+
+Note ye output sirf current server per hi show hungy, agr is talbe ko dosre sql server per run karengy tu waiting per rhe ga,
+because q ke ye transaction to hy but commit nh huwe wi. 
+
+Or baghair commint ke transaction ko dosre server per dekhne ke liye.. ye syntax use huga.
+
+
+*>SET TRANSACTION ISOLATION LEVEL READ UNCOMMITTTED
+*>select * from product;
+
+-------------------------------------------------------------------------------------------------
+
+
+
+
+*>Begin Transaction...
+*>update product set Quantity =300 where id=1;
+*>Rollback Transaction
+
+yha per Rollback likhne se porani transaction show hu jaye gi. 
++------+---------+-------+----------+
+| id   | Name    | Price | Quantity |
++------+---------+-------+----------+
+|    1 | laptop  |  2340 |      200 |
+|    2 | Desktop |  3467 |       20 |
++------+---------+-------+----------+
+
+it mean ke permenantly change nh huwa databases me. 
+
+
+
+-----------------------------------------------------------------------------------------------------
+
+
+
+*>Begin Transaction...
+*>update product set Quantity =300 where id=1;
+*>Rollback Transaction
+*>Commit Transaction
+
+
+
