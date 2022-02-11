@@ -1,0 +1,4 @@
+Primary key must contain UNIQUE values, and cannot contain NULL values.
+
+Create table Std(id int NOT NULL, name varchar(20), age int, PRIMARY KEY(id));
+
